@@ -121,7 +121,7 @@ Create file `.env` and fill it in with your configuration:
 API_KEY=A5x...2zA
 ALGO_SERVER=https://testnet-algorand.api.purestake.io/ps2
 INDEX_SERVER=https://testnet-algorand.api.purestake.io/idx2
-ALGO_PORT=8080
+ALGO_PORT=
 
 ADDRESS=F3K6...MU2I
 SK=128,19,150,...,68,112,254
