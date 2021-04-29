@@ -11,7 +11,7 @@ module.exports = class AlgoWrapper {
     this.algodToken = algodToken
     this.algodServer = algodServer
     this.indexerServer = indexerServer
-
+    //this.sk = algosdk.mnemonicToSecretKey(account.mnemonic)
     this.algodClient = new algosdk.Algodv2(this.algodToken, this.algodServer, this.algodPort)
   }
 
@@ -44,7 +44,7 @@ module.exports = class AlgoWrapper {
     console.log("Signed transaction with txID: %s", txId)
 
     // Submit the transaction
-    await this.algodClient.sendRawTransaction(signedTxn).do()
+    await this.algodClient.sendRawTransaction(signedTxn).do().catch(e => console.error(e))
 
     // Wait for confirmation
     await this._waitForConfirmation(txId)
