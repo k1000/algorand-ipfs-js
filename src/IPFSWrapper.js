@@ -25,9 +25,8 @@ module.exports = class IPFSWrapper {
 
     if (Boolean(this.encryptionPassword)) {
       console.log('Encrypting file')
-      fileContents = this._encryptBuffer(fileContents)
+      fileContents = await this._encryptBuffer(fileContents)
     }
-
     const fileAdded = await last(this.node.add({
       path: path.basename(filepath),
       content: fileContents
